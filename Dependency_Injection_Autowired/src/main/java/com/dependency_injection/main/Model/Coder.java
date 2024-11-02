@@ -14,6 +14,9 @@ public class Coder {
     @Autowired
     Computer computer;    // Autowired annotation means it injects an Computer instance as Dependency injection in this class..
 
+    @Autowired
+    Campus campus;
+
     public Coder()
     {
         System.out.println("No Arg Constructor Called (Coder) !!");
@@ -43,7 +46,7 @@ public class Coder {
     }
 
     public Computer getComputer() {     // Access a Computer instance through this method.
-                                        // returns the Computer instance that was injected into c1
+                                         // returns the Computer instance that was injected into c1
                                         // through dependency injection (the Computer bean)
         return computer;
 
@@ -53,11 +56,21 @@ public class Coder {
         this.computer = computer;
     }
 
+    public Campus getCampus() {
+        return campus;
+    }
+
+    public void setCampus(Campus campus) {
+        this.campus = campus;
+    }
+
     public void display()
     {
         System.out.println();
         System.out.println(name+" and his id is "+id);
-        System.out.println("The brand name is "+computer.display());
+        System.out.println("The brand name is "+computer.brand);
+        System.out.println(name+" is from "+campus.University);
+        System.out.println();
     }
 
     @PreDestroy   // Automatically calls this method at the finishing point

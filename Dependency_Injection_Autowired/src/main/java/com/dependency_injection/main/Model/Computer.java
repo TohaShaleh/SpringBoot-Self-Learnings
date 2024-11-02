@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Computer {
-    private String brand;
+    String brand;
+
     public Computer()
     {
         System.out.println("No Arg Constructor Called (Computer) ");
@@ -25,7 +26,7 @@ public class Computer {
         this.brand = brand;
     }
 
-    public String display()
+    public String brand_name()
     {
         return brand;
     }

@@ -12,11 +12,16 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(Main.class, args);
 
-		Coder c1=context.getBean(Coder.class);
-		c1.display();
+		Coder c1=context.getBean(Coder.class);   // For creating an object of any class ,
+		// We need to call a class by getBean
+
+
+		c1.display();     // Everything will return as null bcz doesnt save any value yet
+
 		c1.setId(1001);
-		c1.setName("Abu Shaleh Toha ");
+		c1.setName("Abu Shaleh Toha");
 		c1.getComputer().setBrand("Intel Corei 7");
+		c1.getCampus().setUniversity("RUET");
 		c1.display();
 
 
